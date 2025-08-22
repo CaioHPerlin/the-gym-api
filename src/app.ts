@@ -1,7 +1,7 @@
 import fastify from "fastify";
-import logger from "./config/logger.ts";
-import v1Routes from "./api/v1/index.ts";
 import { serializerCompiler, validatorCompiler } from "fastify-type-provider-zod";
+import logger from "./config/logger.ts";
+import v1Routes from "#src/api/v1/index.ts";
 
 export default async function buildApp(): Promise<fastify.FastifyInstance> {
     const app = fastify({ logger });
@@ -9,7 +9,7 @@ export default async function buildApp(): Promise<fastify.FastifyInstance> {
     app.setValidatorCompiler(validatorCompiler);
     app.setSerializerCompiler(serializerCompiler);
 
-    app.register(v1Routes, { prefix: '/v1' });
+    app.register(v1Routes, { prefix: "/v1" });
 
     return app;
 }

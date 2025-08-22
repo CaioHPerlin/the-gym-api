@@ -1,5 +1,5 @@
-import env from "./config/env.ts";
-import buildApp from "./app.ts";
+import buildApp from "#src/app.ts";
+import env from "#src/config/env.ts";
 
 async function bootstrap() {
     const app = await buildApp();

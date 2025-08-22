@@ -1,8 +1,8 @@
-import fastify from "fastify";
-import usersController from "./users/users.controller.ts";
+import usersController from "#src/api/v1/users/users.controller.ts";
+import type { FastifyPluginAsync } from "fastify";
 
-export default function v1Routes(app: fastify.FastifyInstance) {
-   
-    app.register(usersController, { prefix: '/users' });
+const v1Routes: FastifyPluginAsync = async (app) => {
+    app.register(usersController, { prefix: "/users" });
+};
 
-}
+export default v1Routes;

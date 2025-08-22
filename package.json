@@ -29,5 +29,8 @@
         "prettier": "^3.6.2",
         "tsx": "^4.20.4",
         "typescript": "^5.9.2"
+    },
+    "imports": {
+        "#src/*.ts": "./src/*.ts"
     }
 }

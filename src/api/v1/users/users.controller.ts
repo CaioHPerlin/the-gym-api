@@ -1,15 +1,12 @@
-import fastify from "fastify";
-import db from "../../../database/client.ts";
-import { users } from "../../../database/schema.ts";
+import usersService from "#src/api/v1/users/users.service.ts";
+import type { FastifyPluginAsyncZod } from "fastify-type-provider-zod";
 
-const usersController = async (app: fastify.FastifyInstance) => {
-    app.get('/', async (_, reply) => {
-        const result = await db.select().from(users)
+const usersController: FastifyPluginAsyncZod = async (app) => {
+    app.get("/", async (_, reply) => {
+        const users = await usersService.findAll();
 
-        reply.status(200).send({
-            data: result,
-        })
+        return reply.status(200).send({ data: users });
     });
-}
+};
 
 export default usersController;
