@@ -10,6 +10,7 @@ export const users = pgTable("users", {
 
 export const rooms = pgTable("rooms", {
     id: uuid().primaryKey().defaultRandom(),
+    title: text().notNull(),
 
     ownerId: uuid()
         .notNull()
