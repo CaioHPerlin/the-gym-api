@@ -1,0 +1,14 @@
+### create room
+POST http://[::1]:3001/api/v1/rooms
+Content-Type: application/json
+
+{
+    "title": "Robert's Room",
+    "ownerId": "1"
+}
+
+### find all rooms
+GET http://[::1]:3001/api/v1/rooms
+
+### find all users
+GET http://[::1]:3001/api/v1/users

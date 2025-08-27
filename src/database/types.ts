@@ -5,6 +5,3 @@ export type InsertUser = typeof users.$inferInsert;
 
 export type Room = typeof rooms.$inferSelect;
 export type InsertRoom = typeof rooms.$inferInsert;
-
-export type RoomUsers = typeof roomUsers.$inferSelect;
-export type InsertRoomUsers = typeof roomUsers.$inferInsert;

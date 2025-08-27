@@ -6,7 +6,7 @@ const roomsRepository = {
     async create(room: InsertRoom): Promise<Room> {
         const { title, ownerId } = room;
         const result = await db.insert(rooms).values({ title, ownerId }).returning();
-        return result[0];        
+        return result[0];
     },
 
     async findAll() {
@@ -15,3 +15,4 @@ const roomsRepository = {
 };
 
 export default roomsRepository;
+

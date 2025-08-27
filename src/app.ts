@@ -9,7 +9,7 @@ export default async function buildApp(): Promise<fastify.FastifyInstance> {
     app.setValidatorCompiler(validatorCompiler);
     app.setSerializerCompiler(serializerCompiler);
 
-    app.register(v1Routes, { prefix: "/v1" });
+    app.register(v1Routes, { prefix: "/api/v1" });
 
     return app;
 }
