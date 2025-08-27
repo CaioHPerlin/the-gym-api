@@ -13,6 +13,6 @@ const roomsService = {
     async findAll(): Promise<Room[]> {
         return roomsRepository.findAll();
     },
-}
+};
 
 export default roomsService;
